@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-da8d3-i22utuo(n8ofe)w)gd2p%9-z4+nwkq%-(s0r!4%5lfu5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1:8000','stockdata-production.up.railway.app']
 
 
 # Application definition
@@ -121,8 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT=os.path.join(BASE_DIR,'stickychart/staicfiles')
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+STATIC_ROOT=os.path.join(BASE_DIR,'stickychart/staticfiles')
+#STATICFILES_DIRS=[os.path.join(BASE_DIR,'staticfiles')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
