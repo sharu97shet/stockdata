@@ -86,7 +86,7 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000/",
-    "http://stockdata-production.up.railway.app"
+    "https://stockdata-production.up.railway.app"
 ]
 
 
