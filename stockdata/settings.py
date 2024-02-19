@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-da8d3-i22utuo(n8ofe)w)gd2p%9-z4+nwkq%-(s0r!4%5lfu5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1:8000','stockdata-production.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1','stockdata-production.up.railway.app']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -83,6 +84,11 @@ DATABASES = {
     }
 }
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000/",
+    "http://stockdata-production.up.railway.app"
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -121,8 +127,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT=os.path.join(BASE_DIR,'stickychart/staticfiles')
-#STATICFILES_DIRS=[os.path.join(BASE_DIR,'staticfiles')]
+STATIC_ROOT=os.path.join(BASE_DIR,'/static/')
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
